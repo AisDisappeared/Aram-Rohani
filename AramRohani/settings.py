@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # our apps
+    'accounts',
+    'courses',
+    'website',
 
     # 3rd party apps 
     'tailwind',
