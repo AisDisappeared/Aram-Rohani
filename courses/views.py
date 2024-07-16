@@ -10,6 +10,7 @@ from .models import *
 class VideosListView(ListView):
     model = Course
     template_name = 'courses/videos.html'
+    paginate_by = 4
 
     def get_queryset(self):
         # Use a transaction to ensure atomicity
