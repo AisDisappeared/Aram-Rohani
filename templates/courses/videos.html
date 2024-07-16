@@ -12,7 +12,7 @@ videos
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
   {% for video in object_list %}
   <div class="flex flex-col mb-6">
-    <video class="flex h-48 w-full md:h-[300px] md:w-[600px] shadow-lg rounded-md" controls>
+    <video class="flex h-48 w-[450px] md:h-[300px] md:w-[600px] shadow-lg rounded-md" controls>
       <source src="/media/{{ video.video }}" type="video/mp4">
       Your browser does not support the video tag.
     </video>
