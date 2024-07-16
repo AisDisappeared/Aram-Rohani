@@ -11,49 +11,55 @@ videos
 {% block content %}
 
 
-
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-10">
-  {% for video in object_list %}
-  <div class="flex flex-col mb-6">
-    <video class="flex h-[300px] w-[450px] md:h-[400px] md:w-[500px] shadow-lg rounded-md border
+<div class="container mx-auto px-4">
+  <h1 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-4xl lg:text-5xl"><span
+      class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Aram Rohani</span> All videos.
+  </h1>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-10">
+    {% for video in object_list %}
+    <div class="flex flex-col mb-6">
+      <video class="flex h-[300px] w-[450px] md:h-[400px] md:w-[500px] shadow-lg rounded-md border
      border-slate-300 dark:border-slate-500 transform transition-transform duration-300 hover:scale-105" controls>
-      <source src="/media/{{ video.video }}" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <div class="mt-4">
-      <h2 class="text-lg font-medium">{{ video.title }}</h2>
-      <p class="text-gray-600">{{ video.description }}</p>
-      <div class="flex items-center mt-2 text-sm text-gray-500">
-        <span class="mr-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd"
-              d="M2 3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3zm2 2v12h12V5H4z"
-              clip-rule="evenodd" />
-          </svg>
-          {{ video.views }} views
-        </span>
-        <span class="mr-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd"
-              d="M2 3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3zm2 2v12h12V5H4z"
-              clip-rule="evenodd" />
-          </svg>
-          {{ video.published_date|naturaltime }}
-        </span>
-        <span class="mr-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd"
-              d="M2 3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3zm2 2v12h12V5H4z"
-              clip-rule="evenodd" />
-          </svg>
-          Tags: <b>{{ video.tag }}</b>
-        </span>
+        <source src="/media/{{ video.video }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="mt-4">
+        <h2 class="text-lg font-medium">{{ video.title }}</h2>
+        <p class="text-gray-600 dark:text-gray-400">{{ video.description }}</p>
+        <div class="flex items-center mt-2 text-sm text-gray-500 dark:text-gray-300">
+          <span class="mr-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block" viewBox="0 0 20 20"
+              fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M2 3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3zm2 2v12h12V5H4z"
+                clip-rule="evenodd" />
+            </svg>
+            {{ video.views }} views
+          </span>
+          <span class="mr-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block" viewBox="0 0 20 20"
+              fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M2 3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3zm2 2v12h12V5H4z"
+                clip-rule="evenodd" />
+            </svg>
+            {{ video.published_date|naturaltime }}
+          </span>
+          <span class="mr-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block" viewBox="0 0 20 20"
+              fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M2 3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3zm2 2v12h12V5H4z"
+                clip-rule="evenodd" />
+            </svg>
+            Tags: <b>{{ video.tag }}</b>
+          </span>
+        </div>
       </div>
     </div>
+    {% endfor %}
   </div>
-  {% endfor %}
 </div>
-
 
 {% endblock content %}
 
