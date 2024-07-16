@@ -16,28 +16,24 @@
 </head>
 
 <body class="bg-gray-50 dark:bg-zinc-900 dark:text-white">
-	{% include "layouts/navbar.html" %}
-	<div class="grid grid-cols-12">
-		<div class="col-span-1">
-			{% include "layouts/sidebar.html" %}
-		</div>
-		<div class="col-span-11">
-			<div class="pt-20 px-6">
-				<a href="{% url 'change' %}" class="fixed top-60 right-10 p-3 rounded-l-lg bg-slate-200 hover:bg-slate-300 dark:bg-yellow-300
-				 dark:hover:bg-yellow-400 text-slate-900 drop-shadow-md transition">
-					<i class="fa-solid {% if request.session.is_dark_mode %}fa-sun{% else %}fa-moon{% endif %} fa-xl">
-
-					</i>
-				</a>
-				{% block content %}
-
-				{% endblock content %}
-			</div>
-		</div>
-	</div>
-
-
-
+    {% include "layouts/navbar.html" %}
+    <div class="grid grid-cols-12 gap-4">
+        <div class="col-span-1 md:col-span-2">
+            {% include "layouts/sidebar.html" %}
+        </div>
+        <div class="col-span-11 md:col-span-10">
+            <div class="pt-20 px-6">
+                <a href="{% url 'change' %}" class="fixed top-4 right-4 p-3 rounded-lg bg-slate-200 hover:bg-slate-300 dark:bg-yellow-300 dark:hover:bg-yellow-400 text-slate-900 dark:text-gray-900 transition">
+                    <i class="fa-solid {% if request.session.is_dark_mode %}fa-sun{% else %}fa-moon{% endif %} fa-xl"></i>
+                </a>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {% block content %}
+                    <!-- Your content goes here -->
+                    {% endblock content %}
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 

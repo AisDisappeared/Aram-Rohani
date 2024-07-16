@@ -2,18 +2,59 @@
 {% load static %}
 
 {% block title %}
-  videos
+videos
 {% endblock title %}
 
+
+
 {% block content %}
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  {% for video in object_list %}
+  <div class="flex flex-col mb-6">
+    <video class="flex h-48 w-full md:h-[300px] md:w-[600px] shadow-lg rounded-md" controls>
+      <source src="/media/{{ video.video }}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="mt-4">
+      <h2 class="text-lg font-medium">{{ video.title }}</h2>
+      <p class="text-gray-600">{{ video.description }}</p>
+      <div class="flex items-center mt-2 text-sm text-gray-500">
+        <span class="mr-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd"
+              d="M2 3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3zm2 2v12h12V5H4z"
+              clip-rule="evenodd" />
+          </svg>
+          {{ video.views }} views
+        </span>
+        <span class="mr-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd"
+              d="M2 3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3zm2 2v12h12V5H4z"
+              clip-rule="evenodd" />
+          </svg>
+          {{ video.published_date }}
+        </span>
+        <span class="mr-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd"
+              d="M2 3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3zm2 2v12h12V5H4z"
+              clip-rule="evenodd" />
+          </svg>
+          Tags: {{ video.tag }}
+        </span>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
 
 
-{% endblock content %}
+{% endblock %}
 
 
 
 
 {% block scripts %}
 <script src="{% static 'js/sidebar.js' %}" defer></script>
-
 {% endblock scripts %}
