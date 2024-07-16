@@ -37,6 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+
+    # 3rd party apps 
+    'tailwind',
+    'theme',
+    'django_browser_reload',
+
 ]
 
 MIDDLEWARE = [
@@ -47,6 +54,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
+
 ]
 
 ROOT_URLCONF = 'AramRohani.urls'
@@ -73,12 +82,29 @@ WSGI_APPLICATION = 'AramRohani.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+
+
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'aramrohani',
+        'USER': 'aliseyfi',
+        'PASSWORD': 'ali@grpc1',
+        'HOST': '127.0.0.1',
+        'PORT': '5432'
     }
 }
+
+
 
 
 # Password validation
@@ -121,3 +147,17 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+# Internal IP
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+
+
+
+# Path to NPM package manager 
+NPM_BIN_PATH = "/home/disappeared/.nvm/versions/node/v20.15.0/bin/npm"
+# register the tailwind app name
+TAILWIND_APP_NAME = 'theme'
