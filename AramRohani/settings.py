@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'tailwind',
     'theme',
     'django_browser_reload',
-
+    'sweetify',
 ]
 
 MIDDLEWARE = [
@@ -177,3 +177,8 @@ INTERNAL_IPS = [
 NPM_BIN_PATH = "/home/disappeared/.nvm/versions/node/v20.15.0/bin/npm"
 # register the tailwind app name
 TAILWIND_APP_NAME = 'theme'
+
+
+
+# Sweetify notification type
+SWEETIFY_SWEETALERT_LIBRARY = 'sweetalert2'

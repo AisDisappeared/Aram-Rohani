@@ -1,19 +1,56 @@
 {% load static tailwind_tags %}
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-    <title>Django Tailwind</title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		{% tailwind_css %}
-	</head>
+<html lang="en" class="{% if request.session.is_dark_mode %}dark{% endif %}">
 
-	<body class="bg-gray-50 font-serif leading-normal tracking-normal">
-		<div class="container mx-auto">
-			<section class="flex items-center justify-center h-screen">
-				<h1 class="text-5xl">Django + Tailwind = ❤️</h1>
-			</section>
+<head>
+	<title>Aram Rohani | {% block title %} {% endblock title %}</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+		integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	{% tailwind_css %}
+</head>
+
+<body class="bg-gray-50 dark:bg-zinc-900 dark:text-white">
+	<!-- include navbar -->
+	<div class="grid grid-cols-12">
+		<div class="col-span-1">
+			{% include "layouts/sidebar.html" %}
 		</div>
-	</body>
+		<div class="col-span-11">
+			<div class="pt-20 px-6">
+				<a href="{% url 'change' %}" class="fixed top-60 right-10 p-3 rounded-l-lg bg-slate-200 hover:bg-slate-300 dark:bg-yellow-300
+				 dark:hover:bg-yellow-400 text-slate-900 drop-shadow-md transition">
+					<i class="fa-solid {% if request.session.is_dark_mode %}fa-sun{% else %}fa-moon{% endif %} fa-xl">
+
+					</i>
+				</a>
+				{% block content %}
+
+				{% endblock content %}
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+	<!-- sweetify -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.6.5/sweetalert2.all.min.js"></script>
+
+	{% block scripts %}
+
+	{% endblock scripts %}
+
+
+	{% load sweetify %}
+	{% sweetify %}
+</body>
+
 </html>

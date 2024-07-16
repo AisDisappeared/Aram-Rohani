@@ -18,10 +18,15 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
+from .views import * 
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("__reload__/", include("django_browser_reload.urls")),
+    path('change_mode/',change_mode,name='change'),
+    path('videos/',include('courses.urls')),
 ]
 
 
