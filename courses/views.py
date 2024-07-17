@@ -31,14 +31,15 @@ class VideosListView(ListView):
 def VideosSearchView(request):
     allvideos = Course.objects.all()
     object_list = ''
+    
     if request.method == 'GET':
         s = request.GET.get('s')
         if len(s) > 0:
             object_list = allvideos.filter(Q(title__contains=s) | Q(description__contains=s))
+            context = {"object_list":object_list}
+            return render(request,'courses/videos.html',context)
         else:
             return redirect(request.META.get('HTTP_REFERER'))
         
-        context = {"object_list":object_list}
-        return render(request,'courses/videos.html',context)
     
     return redirect(request.META.get('HTTP_REFERER'))
