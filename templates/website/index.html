@@ -8,10 +8,9 @@ Home
 {% endblock title %}
 
 
-
 {% block content %}
 
-
+<!-- carousel -->
 <div id="default-carousel" class="relative w-full" data-carousel="slide">
     <!-- Carousel wrapper -->
     <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
@@ -90,12 +89,10 @@ Home
 
 
 {% block scripts %}
-
 <!-- sidebar and navbar  -->
-<script src="{% static 'js/sidebar.js' %}" defer></script>
-<script src="{% static 'js/navbar.js' %}" defer></script>
+<!-- <script src="{% static 'js/sidebar.js' %}" defer></script>
+<script src="{% static 'js/navbar.js' %}" defer></script> -->
 
 <!-- Flowbite -->
 <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
-
 {% endblock scripts %}
