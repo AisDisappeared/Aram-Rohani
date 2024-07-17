@@ -1,8 +1,9 @@
 from typing import Any
 from django.db.models.query import QuerySet
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.views.generic import ListView 
 from django.db import transaction
+from django.db.models import Q
 from .models import *
 
 
@@ -24,3 +25,13 @@ class VideosListView(ListView):
                 obj.save()  # Save each object with the new value
             
         return queryset
+    
+
+
+def VideosSearchView(request):
+    allvideos = Course.objects.all()
+    object_list = ''
+    if s:= request.GET.get('s'):
+        object_list = allvideos.filter(Q(title__contains=s) | Q(description__contains=s))
+    context = {"object_list":object_list}
+    return render(request,'courses/videos.html',context)
