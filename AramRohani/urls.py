@@ -24,6 +24,7 @@ from .views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',include('website.urls')),
     path("__reload__/", include("django_browser_reload.urls")),
     path('change_mode/',change_mode,name='change'),
     path('videos/',include('courses.urls')),
