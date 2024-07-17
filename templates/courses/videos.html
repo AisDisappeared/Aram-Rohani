@@ -19,7 +19,7 @@ videos
     {% for video in object_list %}
     <div class="flex flex-col mb-6">
       <video class="flex h-[300px] w-[450px] md:h-[400px] md:w-[500px] shadow-lg rounded-md md:rounded-md border-2
-     border-slate-300 dark:border-slate-500 transform transition-transform duration-300 hover:scale-105" controls>
+     border-gray-300 dark:border-slate-500 transform transition-transform duration-300 hover:scale-105" controls>
         <source src="/media/{{ video.video }}" type="video/mp4">
         Your browser does not support the video tag.
       </video>
