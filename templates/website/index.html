@@ -98,15 +98,18 @@ Home
     </div>
 </div>
 <hr class="mt-5">
-{% load static %}
-<!-- Biography section -->
-<section class="relative mt-10 bg-cover bg-center bg-no-repeat bg-fixed mr-10" style="background-image: url('{% static 'images/maestro.jpg' %}');">
-    <!-- Overlay for darkening the background image -->
-    <div class="absolute inset-0 bg-black opacity-50"></div>
-    <div class="relative container mx-auto px-4 py-20">
-        <div class="bg-white bg-opacity-70 backdrop-blur-lg rounded-lg p-6 md:p-12 shadow-lg">
-            <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-6 text-right">بیوگرافی</h2>
-            <div class="text-lg font-normal text-gray-700 dark:text-gray-600 rtl text-right space-y-4">
+
+<!-- Biography Section -->
+<section class="container mx-auto my-10 p-6">
+    <div class="flex flex-col lg:flex-row items-center bg-white dark:bg-gray-200 shadow-lg rounded-lg overflow-hidden">
+        <!-- Image Section -->
+        <div class="md:w-full w-[400px] lg:w-1/3 h-96 lg:h-auto md:ml-4 pt-2">
+            <img src="{% static 'images/maestro2.jpg' %}" alt="Biography Image" class="object-cover w-full md:rounded-xl h-full">
+        </div>
+        <!-- Text Section -->
+        <div class="w-full lg:w-2/3 p-6 lg:p-12 text-right">
+            <h2 class="text-2xl lg:text-3xl font-extrabold text-gray-900 dark:text-black mb-4">بیوگرافی</h2>
+            <div class="text-lg font-normal text-gray-700 dark:text-gray-800 rtl leading-relaxed space-y-4">
                 <p>
                     <strong>تحصیلات مرتبط</strong><br>
                     2001-2003: فراگیری گیتار در دپارتمان گیتار کلاسیک دانشگاه CONCORDIA، مونترال، کانادا<br>
