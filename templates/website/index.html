@@ -17,9 +17,12 @@ Home
     <div id="default-carousel" class="relative w-full" data-carousel="slide">
         <h1
             class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white ml-[20px]  md:text-4xl lg:text-5xl md:mb-10 md:pl-[330px]">
-            <span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400 ">Aram Rohani </span>official website
+            <span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400 ">Aram Rohani
+            </span>official website
         </h1>
-        <p class="text-lg font-normal text-gray-500 ml-[90px] md:text-center mb-4 lg:text-xl dark:text-gray-400 md:pr-[250px]">Flamenco guitarist and instructor</p>
+        <p
+            class="text-lg font-normal text-gray-500 ml-[90px] md:text-center mb-4 lg:text-xl dark:text-gray-400 md:pr-[250px]">
+            Flamenco guitarist and instructor</p>
 
         <div id="default-carousel" class="relative w-full" data-carousel="slide">
             <!-- Carousel wrapper -->
@@ -51,7 +54,8 @@ Home
                 </div>
             </div>
             <!-- Slider indicators -->
-            <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse md:pr-[150px]">
+            <div
+                class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse md:pr-[150px]">
                 <!-- <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
                     data-carousel-slide-to="0"></button> -->
                 <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
@@ -91,18 +95,18 @@ Home
                 </span>
             </button>
         </div>
-
-{% endblock content %}
-
-
+    </div>
+    {% endblock content %}
 
 
 
-        {% block scripts %}
-        <!-- sidebar and navbar  -->
-        <!-- <script src="{% static 'js/sidebar.js' %}" defer></script>
+
+
+    {% block scripts %}
+    <!-- sidebar and navbar  -->
+    <!-- <script src="{% static 'js/sidebar.js' %}" defer></script>
 <script src="{% static 'js/navbar.js' %}" defer></script> -->
 
-        <!-- Flowbite -->
-        <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
-        {% endblock scripts %}
+    <!-- Flowbite -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+    {% endblock scripts %}
