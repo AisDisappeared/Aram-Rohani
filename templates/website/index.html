@@ -113,7 +113,8 @@ Home
         <!-- Text Section -->
         <div class="w-full lg:w-2/3 p-6 lg:p-12 text-right">
             <h2 class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-gray-900 dark:text-black mb-4">بیوگرافی</h2>
-            <div class="text-lg font-normal text-gray-700 dark:text-gray-800 rtl leading-relaxed space-y-4 pt-4" dir="rtl">
+            <div class="text-lg font-normal text-gray-700 dark:text-gray-800 rtl leading-relaxed space-y-4 pt-4"
+                dir="rtl">
                 <p><strong class="md:text-3xl">تحصیلات مرتبط</strong></p>
                 <ul class="list-disc pr-5">
                     <li>2001-2003: فراگیری گیتار در دپارتمان گیتار کلاسیک دانشگاه CONCORDIA، مونترال، کانادا</li>
@@ -171,54 +172,62 @@ Home
 
 <!-- video ad section -->
 <div class="container mx-auto px-4">
-  <h1 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-4xl lg:text-5xl md:ml-[275px]"><span
-      class="text-transparent bg-clip-text bg-gradient-to-r to-sky-600 from-purple-400">Flamenco Guitarist and </span>Instructor
-  </h1>
-  <div class="grid grid-cols-1 md:grid-cols-1 gap-6 pt-10 md:ml-[310px]">
-    <div class="flex flex-col mb-6">
-      <video class="flex h-[300px] w-[450px] md:h-[400px] md:w-[700px] shadow-lg rounded-md md:rounded-md border-2
+    <h1 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-4xl lg:text-5xl md:ml-[275px]"><span
+            class="text-transparent bg-clip-text bg-gradient-to-r to-sky-600 from-purple-400">Flamenco Guitarist and
+        </span>Instructor
+    </h1>
+    <div class="grid grid-cols-1 md:grid-cols-1 gap-6 pt-10 md:ml-[310px]">
+        <div class="flex flex-col mb-6">
+            <video poster="{% static 'images/hatra.png' %}" class="flex h-[300px] w-[450px] md:h-[400px] md:w-[700px] shadow-lg rounded-md md:rounded-md border-2
      border-gray-300 dark:border-slate-500 transform transition-transform duration-300 hover:scale-105" controls>
-        <source src="/media/{{ specvideo.video }}" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <div class="mt-4">
-        <h2 class="text-lg font-medium">{{ specvideo.title }}</h2>
-        <p class="text-gray-600 dark:text-gray-400">{{ specvideo.description }}</p>
-        <div class="flex items-center mt-2 text-sm text-gray-500 dark:text-gray-300">
-          <span class="mr-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block" viewBox="0 0 20 20"
-              fill="currentColor">
-              <path fill-rule="evenodd"
-                d="M2 3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3zm2 2v12h12V5H4z"
-                clip-rule="evenodd" />
-            </svg>
-            {{ specvideo.views }} views
-          </span>
-          <span class="mr-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block" viewBox="0 0 20 20"
-              fill="currentColor">
-              <path fill-rule="evenodd"
-                d="M2 3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3zm2 2v12h12V5H4z"
-                clip-rule="evenodd" />
-            </svg>
-            {{ specvideo.published_date|naturaltime }}
-          </span>
-          <span class="mr-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block" viewBox="0 0 20 20"
-              fill="currentColor">
-              <path fill-rule="evenodd"
-                d="M2 3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3zm2 2v12h12V5H4z"
-                clip-rule="evenodd" />
-            </svg>
-            Tags: <b>{{ specvideo.tag }}</b>
-          </span>
+                <source src="/media/{{ specvideo.video }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="mt-4">
+                <h2 class="text-lg font-medium">{{ specvideo.title }}</h2>
+                <p class="text-gray-600 dark:text-gray-400">{{ specvideo.description }}</p>
+                <div class="flex items-center mt-2 text-sm text-gray-500 dark:text-gray-300">
+                    <span class="mr-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M2 3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3zm2 2v12h12V5H4z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        {{ specvideo.views }} views
+                    </span>
+                    <span class="mr-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M2 3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3zm2 2v12h12V5H4z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        {{ specvideo.published_date|naturaltime }}
+                    </span>
+                    <span class="mr-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M2 3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3zm2 2v12h12V5H4z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        Tags: <b>{{ specvideo.tag }}</b>
+                    </span>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-  <a href="{% url 'courses:videos' %}"><button type="button" class="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-lg shadow-teal-500/50 dark:shadow-lg dark:shadow-teal-800/80 font-medium rounded-lg text-lg px-5 py-2.5 text-center me-2 mb-4 md:h-[60px] md:w-[150px] md:ml-[860px]">All videos</button>
-</a>
+    <a href="{% url 'courses:videos' %}"><button type="button"
+            class="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-lg shadow-teal-500/50 dark:shadow-lg dark:shadow-teal-800/80 font-medium rounded-lg text-lg px-5 py-2.5 text-center me-2 mb-4 md:h-[60px] md:w-[150px] md:ml-[860px]">All
+            videos</button>
+    </a>
 </div>
+
+
+
+<!-- courses section -->
+
 
 
 
