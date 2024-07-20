@@ -70,20 +70,21 @@
                             Rohani</span>
                     </a>
                     <!-- Subscribe form -->
-                    <form class="mt-4 flex flex-col sm:flex-row">
+                    <form class="mt-4 flex flex-col sm:flex-row" action="{% url 'website:subscribe' %}" method="post">
+                        {% csrf_token %}
                         <i
                             class="fa-solid fa-envelope fa-2x pr-3 text-gray-600 hover:text-orange-600 hidden md:inline md:mt-1 md:mr-2"></i>
                         <input
-                            class="p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            type="email" placeholder="Enter your email" required>
+                            class="p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-slate-900" name="email"
+                            type="email" placeholder="Enter your email" autofocus required>
                         <button
-                            class="mt-2 sm:mt-0 sm:ml-2 p-2 rounded-md bg-blue-500 text-white hover:bg-blue-700">Subscribe</button>
+                            class="mt-2 sm:mt-0 sm:ml-2 p-2 rounded-md bg-blue-500 text-white hover:bg-blue-700" type="submit">Subscribe</button>
                     </form>
                 </div>
                 <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
 
                     <div>
-                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Section</h2>
+                        <h2 class="mb-6 text-sm md:text-md font-semibold text-gray-900 uppercase dark:text-white">Section</h2>
                         <ul class="text-gray-500 dark:text-gray-400 font-medium">
                             <li class="mb-4">
                                 <a href="{% url 'courses:videos' %}" class="hover:underline ">Videos</a>
@@ -94,7 +95,7 @@
                         </ul>
                     </div>
                     <div>
-                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
+                        <h2 class="mb-6 text-sm md:text-md font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
                         <ul class="text-gray-500 dark:text-gray-400 font-medium">
                             <li class="mb-4">
                                 <a href="#" class="hover:underline">Privacy Policy</a>

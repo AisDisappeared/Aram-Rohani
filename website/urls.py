@@ -5,4 +5,5 @@ from .views import *
 app_name = 'website'
 urlpatterns = [
     path('',indexview,name='home'),
+    path('subscribe',SubscribeView , name="subscribe"),
 ]
