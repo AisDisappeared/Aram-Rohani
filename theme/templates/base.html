@@ -71,7 +71,8 @@
                     </a>
                     <!-- Subscribe form -->
                     <form class="mt-4 flex flex-col sm:flex-row">
-                        <i class="fa-solid fa-envelope fa-2x pr-3 text-gray-600 hover:text-orange-600 hidden md:inline md:mt-1 md:mr-2"></i>
+                        <i
+                            class="fa-solid fa-envelope fa-2x pr-3 text-gray-600 hover:text-orange-600 hidden md:inline md:mt-1 md:mr-2"></i>
                         <input
                             class="p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                             type="email" placeholder="Enter your email" required>
@@ -85,7 +86,7 @@
                         <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Section</h2>
                         <ul class="text-gray-500 dark:text-gray-400 font-medium">
                             <li class="mb-4">
-                                <a href="" class="hover:underline ">Videos</a>
+                                <a href="{% url 'courses:videos' %}" class="hover:underline ">Videos</a>
                             </li>
                             <li>
                                 <a href="" class="hover:underline">Login</a>
@@ -108,14 +109,18 @@
             <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
             <div class="sm:flex sm:items-center sm:justify-between">
                 <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a
-                        href="{% url 'website:home' %}" class="hover:underline">Aram Rohani</a>. All Rights
+                        href="{% url 'website:home' %}" class="hover:underline font-bold">Aram Rohani</a>. All Rights
                     Reserved.</span>
                 <div class="flex mt-4 sm:justify-center sm:mt-0">
-                    <a href="https://www.instagram.com/aram_rohani/" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                    <span class="text-gray-500 dark:text-gray-400 ms-5 md:mr-7 md:text-md font-bold">وبسایت رسمی ارام روحانی</span>
+
+                    <a href="https://www.instagram.com/aram_rohani/"
+                        class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
                         <i class="fab fa-instagram w-4 h-4"></i>
                         <span class="sr-only">Instagram page</span>
                     </a>
-                    <a href="https://wa.me/989128231807" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                    <a href="https://wa.me/989128231807"
+                        class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
                         <i class="fab fa-whatsapp w-4 h-4"></i>
                         <span class="sr-only">WhatsApp contact</span>
                     </a>
