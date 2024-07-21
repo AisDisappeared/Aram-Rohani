@@ -44,7 +44,28 @@ def LoginView(request):
 
 
 def RegisterView(request):
-    pass
+    if not request.user.is_authenticated:
+        if request.method == 'POST':
+            form = UserCreationForm(request.POST)
+            if form.is_valid():
+                email = form.cleaned_data['email']
+                # Check if username or email already exists
+                if User.objects.filter(email=email).exists():
+                    sweetify.error(request, 'Signup not successful. Email address already registered.', persistent=':(')
+                    return render(request, 'accounts/register.html', {'form': form})
+                else:
+                    form.save()
+                    sweetify.success(request, 'Signup successful', persistent='OK')
+                    return redirect('/')
+            else:
+                sweetify.error(request, 'Signup not successful. Please Check your Email , Password and Username!', persistent=':(')
+                return render(request, 'accounts/register.html', {'form': form})
+        else:
+            form = UserCreationForm()
+            context = {'form': form}
+            return render(request, 'accounts/register.html', context)
+    else:
+        return redirect('/')
 
 
 @login_required
