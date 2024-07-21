@@ -28,6 +28,8 @@ Login
     {% endfor %} 
     <button type="submit" class="bg-cyan-500 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded">Login</button>
     <a href="{% url 'password_reset' %}" class="ml-40">Forgot your password?</a>
+     <a class="flex ml-44" href="{% url 'accounts:register' %}">Need
+          an account? <b class="ml-2 mr-2"> Sign up </b> here.</a>
 
 </form>
 
