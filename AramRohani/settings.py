@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'multi_captcha_admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -184,3 +185,20 @@ TAILWIND_APP_NAME = 'theme'
 
 # Sweetify notification type
 SWEETIFY_SWEETALERT_LIBRARY = 'sweetalert2'
+
+
+
+
+# Captcha for Django Admin panel
+MULTI_CAPTCHA_ADMIN = {
+    'engine': 'simple-captcha',
+}
+
+
+
+# Django ModelBackend
+AUTHENTICATION_BACKENDS = [
+    'accounts.custom_auth_backends.CustomAuthenticationBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
+

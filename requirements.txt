@@ -9,6 +9,9 @@ cookiecutter==2.6.0
 Django==5.0.7
 django-appconf==1.0.6
 django-browser-reload==1.13.0
+django-multi-captcha-admin==2.0.0
+django-ranged-response==0.2.0
+django-simple-captcha==0.6.0
 django-taggit==5.0.1
 django-tailwind==3.8.0
 django-widget-tweaks==1.5.0
@@ -18,6 +21,7 @@ Jinja2==3.1.4
 markdown-it-py==3.0.0
 MarkupSafe==2.1.5
 mdurl==0.1.2
+pillow==10.4.0
 psycopg2==2.9.9
 psycopg2-binary==2.9.9
 Pygments==2.18.0
