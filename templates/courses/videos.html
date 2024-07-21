@@ -75,9 +75,9 @@ videos
 
             {% for i in page_obj.paginator.page_range %}
                 {% if page_obj.number == i %}
-                    <li><a class="px-3 py-2 leading-tight text-gray-500 dark:text-white bg-gray-200 dark:bg-rose-600 border border-gray-300 hover:bg-white hover:text-gray-700 dark:border-gray-700 dark:hover:bg-gray-500 dark:hover:text-white" href="?page={{ i }}">{{ i }}</a></li>
+                    <li><a class="px-3 py-2 leading-tight text-gray-500 dark:text-white bg-amber-400 dark:bg-rose-600 border border-gray-300 hover:bg-white hover:text-gray-700 dark:border-gray-700 dark:hover:bg-gray-500 dark:hover:text-white" href="?page={{ i }}">{{ i }}</a></li>
                 {% else %}
-                    <li><a class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-rose-800 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-500 dark:hover:text-white" href="?page={{ i }}">{{ i }}</a></li>
+                    <li><a class="px-3 py-2 leading-tight text-gray-500 bg-amber-200 border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-rose-800 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-500 dark:hover:text-white" href="?page={{ i }}">{{ i }}</a></li>
                 {% endif %}
             {% endfor %}
 
@@ -95,15 +95,7 @@ videos
     
   </div>
 </div>
-
-
-
-
-
-
-
 {% endblock content %}
-
 
 
 
@@ -113,7 +105,6 @@ videos
 <!-- Flowbite -->
 <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
 {% endblock scripts %}
-
 
 
 
