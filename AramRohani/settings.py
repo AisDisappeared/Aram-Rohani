@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
-    
+    'django.contrib.sites',
     # our apps
     'accounts',
     'courses',
@@ -52,6 +52,8 @@ INSTALLED_APPS = [
     'sweetify',
     'widget_tweaks',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
