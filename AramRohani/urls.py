@@ -29,6 +29,7 @@ urlpatterns = [
     path('change_mode/',change_mode,name='change'),
     path('videos/',include('courses.urls')),
     path('captcha/', include('captcha.urls')),
+    path('accounts/',include('accounts.urls')),
 ]
 
 

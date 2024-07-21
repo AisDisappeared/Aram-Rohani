@@ -44,8 +44,7 @@ def LoginView(request):
 
 
 def RegisterView(request):
-    pass 
-
+    pass
 
 
 @login_required
