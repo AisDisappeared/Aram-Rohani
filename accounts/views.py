@@ -50,15 +50,9 @@ def RegisterView(request):
         if request.method == 'POST':
             form = UserCreationForm(request.POST)
             if form.is_valid():
-                email = form.cleaned_data['email']
-                # Check if username or email already exists
-                if User.objects.filter(email=email).exists():
-                    sweetify.error(request, 'Signup not successful! Email address already registered.', persistent=':(')
-                    return render(request, 'accounts/signup.html', {'form': form})
-                else:
-                    form.save()
-                    sweetify.success(request, 'Signup successful', persistent='OK')
-                    return redirect('/')
+                form.save()
+                sweetify.success(request, 'Signup successful', persistent='OK')
+                return redirect('/')
             else:
                 sweetify.error(request, 'Signup not successful! Please Check your Credentials!', persistent=':(')
                 return render(request, 'accounts/signup.html', {'form': form})

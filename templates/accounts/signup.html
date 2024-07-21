@@ -14,7 +14,22 @@ Register
 
 
 {% block content %}
+<div class="flex justify-center mt-10 mb-5 mr-10">
+  <div class="border border-slate-300 rounded-lg p-6 dark:bg-slate-50">
+    <form method="POST" action="{% url 'accounts:register' %}" autocomplete="off">
+    {% csrf_token %}
+    {% for field in form %} 
 
+        <div class="mb-4">
+            <label class="block text-gray-700 dark:text-purple-500 text-sm font-bold mb-2" for="{{ field.id_for_label }}">{{ field.label }}</label> 
+            {% render_field field class="bg-slate-100 dark:bg-slate-300 text-slate-800 rounded-lg p-3 drop-shadow-xl w-[400px]" %} 
+        </div> 
+
+    {% endfor %} 
+    <button type="submit" class="bg-cyan-500 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded">Sign up</button>
+    </form>
+  </div>
+</div>
 {% endblock content %}
 
 
