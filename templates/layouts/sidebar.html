@@ -29,8 +29,16 @@
                <span class="flex-1 ms-3 whitespace-nowrap">Videos</span>
             </a>
          </li>
-
-
+         {% if request.user.is_authenticated %}
+           
+         <li>
+            <a href="{% url 'accounts:logout' %}"
+               class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group  {% if 'signup' in request.path %} text-teal-500 dark:text-teal-400 {% endif %}">
+               <i class="fa-solid fa-key"></i>
+               <span class="flex-1 ms-3 whitespace-nowrap">Logout</span>
+            </a>
+         </li>
+         {% else %}
          <li>
             <a href="{% url 'accounts:login' %}"
                class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group {% if 'login' in request.path %} text-teal-500 dark:text-teal-400 {% endif %}">
@@ -46,6 +54,8 @@
                <span class="flex-1 ms-3 whitespace-nowrap">Sign Up</span>
             </a>
          </li>
+         {% endif %}
+
       </ul>
       <!-- <div class="bg-white mt-[900px] rounded-full">
          <svg width="50" height="50" class="pl-4" data-jdenticon-value="{{request.user.username}}"></svg>
