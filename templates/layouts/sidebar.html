@@ -30,7 +30,7 @@
             </a>
          </li>
          {% if request.user.is_authenticated %}
-           
+
          <li>
             <a href="{% url 'accounts:logout' %}"
                class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group  {% if 'signup' in request.path %} text-teal-500 dark:text-teal-400 {% endif %}">
@@ -55,10 +55,13 @@
             </a>
          </li>
          {% endif %}
+         {% if request.user.is_authenticated %}
+         <div class="flex items-center text-lg md:pt-[950px] pt-[850px]">
+            <i class="fas fa-user text-gray-500 mr-2"></i>
+            {{ request.user.username }}
+         </div>
+         {% endif %}
 
       </ul>
-      <!-- <div class="bg-white mt-[900px] rounded-full">
-         <svg width="50" height="50" class="pl-4" data-jdenticon-value="{{request.user.username}}"></svg>
-      </div> -->
    </div>
 </aside>
