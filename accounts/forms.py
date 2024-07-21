@@ -4,7 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 
 
 
-# overriding Django UserCreationForm class
+# Overriding Django UserCreationForm Class
 class UserCreationForm(UserCreationForm):
     email = forms.EmailField(required=True,label='email') 
     class Meta:

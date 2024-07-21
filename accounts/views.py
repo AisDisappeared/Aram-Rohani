@@ -6,17 +6,18 @@ from django.contrib.auth import authenticate,login,logout
 import sweetify 
 
 
+# Login View
 def LoginView(request):
     if not request.user.is_authenticated:
         if request.method == 'POST':
             form = AuthenticationForm(request=request, data=request.POST)
             if form.is_valid():
-                # Extract username and password from the form
+                # Extract Fields and Credentials from the form
                 username = form.cleaned_data.get('username')
                 password = form.cleaned_data.get('password')
                 email = form.cleaned_data.get('email')
 
-                # Check if email is provided, if so, set username to email
+                # Check if the email address exists
                 if email:
                     username = email
 
@@ -28,7 +29,7 @@ def LoginView(request):
                     sweetify.success(request, 'Login successful!', persistent = 'ok')
                     return redirect('/')
             else:
-                sweetify.error(request, 'Login failed. Please check your username and password.', persistent=':(')
+                sweetify.error(request, 'Login failed! Please check your username and password.', persistent=':(')
                 return redirect('/')  # Redirect back to the login page
         else:
             form = AuthenticationForm()
@@ -42,7 +43,7 @@ def LoginView(request):
 
 
 
-
+# Signup View 
 def RegisterView(request):
     if not request.user.is_authenticated:
         if request.method == 'POST':
@@ -51,23 +52,25 @@ def RegisterView(request):
                 email = form.cleaned_data['email']
                 # Check if username or email already exists
                 if User.objects.filter(email=email).exists():
-                    sweetify.error(request, 'Signup not successful. Email address already registered.', persistent=':(')
-                    return render(request, 'accounts/register.html', {'form': form})
+                    sweetify.error(request, 'Signup not successful! Email address already registered.', persistent=':(')
+                    return render(request, 'accounts/signup.html', {'form': form})
                 else:
                     form.save()
                     sweetify.success(request, 'Signup successful', persistent='OK')
                     return redirect('/')
             else:
-                sweetify.error(request, 'Signup not successful. Please Check your Email , Password and Username!', persistent=':(')
-                return render(request, 'accounts/register.html', {'form': form})
+                sweetify.error(request, 'Signup not successful! Please Check your Credentials!', persistent=':(')
+                return render(request, 'accounts/signup.html', {'form': form})
         else:
             form = UserCreationForm()
             context = {'form': form}
-            return render(request, 'accounts/register.html', context)
+            return render(request, 'accounts/signup.html', context)
     else:
         return redirect('/')
 
 
+
+# Logout View
 @login_required
 def LogoutView(request):
     logout(request)
