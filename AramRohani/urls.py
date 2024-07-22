@@ -20,7 +20,16 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 from .views import * 
+from django.contrib.sitemaps.views import sitemap
+from courses.sitemaps import VideosSitemap
+from website.sitemaps import StaticViewSitemap
 
+
+
+sitemaps = {
+    "static": StaticViewSitemap ,
+    "videos" : VideosSitemap ,
+}
 
 
 urlpatterns = [
@@ -31,6 +40,8 @@ urlpatterns = [
     path('videos/',include('courses.urls')),
     path('captcha/', include('captcha.urls')),
     path('accounts/',include('accounts.urls')),
+    path("sitemap.xml",sitemap,{"sitemaps": sitemaps},name="django.contrib.sitemaps.views.sitemap",),
+
 
 
 
