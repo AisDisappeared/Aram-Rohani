@@ -8,6 +8,16 @@ Home
 {% endblock title %}
 
 
+{% block extra_head %}
+    <!-- Link to Persian Font (Specific to This Page) -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v28.0.0/dist/font-face.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Vazir', sans-serif;
+        }
+    </style>
+{% endblock extra_head %}
+
 {% block content %}
 
 

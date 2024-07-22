@@ -16,6 +16,7 @@
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" />
     <!-- favicon -->
     <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}">
+    {% block extra_head %}{% endblock extra_head %}
     {% tailwind_css %}
 </head>
 
