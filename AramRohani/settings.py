@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'django_browser_reload',
     'sweetify',
     'widget_tweaks',
+    'robots',
 ]
 
 SITE_ID = 1
@@ -205,3 +206,7 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
 
+
+# Robot text FILE
+ROBOTS_USE_HOST = True
+ROBOTS_USE_SITEMAP = True
