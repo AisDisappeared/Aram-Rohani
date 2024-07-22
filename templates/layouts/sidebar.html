@@ -16,7 +16,7 @@
       <ul class="space-y-2 font-medium">
          <li>
             <a href="{% url 'website:home' %}"
-               class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group {% if request.path == '/' %} text-teal-500 dark:text-teal-400 {% endif %}">
+               class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group {% if request.path == '/' %} text-teal-500 dark:text-teal-300 {% endif %}">
                <i class="fa-solid fa-home"></i>
                <span class="ms-3">Home</span>
             </a>
@@ -24,7 +24,7 @@
 
          <li>
             <a href="{% url 'courses:videos' %}"
-               class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group {% if 'videos' in request.path %} text-teal-500 dark:text-teal-400 {% endif %}">
+               class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group {% if 'videos' in request.path %} text-teal-500 dark:text-teal-300 {% endif %}">
                <i class="fa-solid fa-play-circle"></i>
                <span class="flex-1 ms-3 whitespace-nowrap">Videos</span>
             </a>
@@ -33,7 +33,7 @@
 
          <li>
             <a href="{% url 'accounts:logout' %}"
-               class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group  {% if 'signup' in request.path %} text-teal-500 dark:text-teal-400 {% endif %}">
+               class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group  {% if 'signup' in request.path %} text-teal-500 dark:text-teal-300 {% endif %}">
                <i class="fa-solid fa-key"></i>
                <span class="flex-1 ms-3 whitespace-nowrap">Logout</span>
             </a>
@@ -41,7 +41,7 @@
          {% else %}
          <li>
             <a href="{% url 'accounts:login' %}"
-               class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group {% if 'login' in request.path %} text-teal-500 dark:text-teal-400 {% endif %}">
+               class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group {% if 'login' in request.path %} text-teal-500 dark:text-teal-300 {% endif %}">
                <i class="fa-solid fa-sign-in"></i>
                <span class="flex-1 ms-3 whitespace-nowrap">Sign In</span>
             </a>
@@ -49,7 +49,7 @@
 
          <li>
             <a href="{% url 'accounts:register' %}"
-               class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group  {% if 'signup' in request.path %} text-teal-500 dark:text-teal-400 {% endif %}">
+               class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group  {% if 'signup' in request.path %} text-teal-500 dark:text-teal-300 {% endif %}">
                <i class="fa-solid fa-key"></i>
                <span class="flex-1 ms-3 whitespace-nowrap">Sign Up</span>
             </a>
