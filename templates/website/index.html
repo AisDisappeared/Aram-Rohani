@@ -196,12 +196,16 @@ Home
         </span>Instructor
     </h1>
     <div class="grid grid-cols-1 md:grid-cols-1 gap-6 pt-10 md:ml-[310px]">
-        <div class="flex flex-col mb-6">
-            <video poster="{% static 'images/hatra.png' %}" class="flex h-[300px] w-[450px] md:h-[400px] md:w-[700px] shadow-lg rounded-md md:rounded-md border-2
+        <div class="relative flex flex-col mb-6 ">
+            <video id="video-player2" poster="{% static 'images/hatra.png' %}" class="flex h-[300px] w-[450px] md:h-[400px] md:w-[700px] shadow-lg rounded-md md:rounded-md border-2
                  border-gray-300 dark:border-slate-500 transform transition-transform duration-300 hover:scale-105" controls>
                 <source src="/media/{{ specvideo.video }}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
+                 <!-- Play Button Overlay -->
+            <div id="play-button2" class="absolute inset-0 flex items-center justify-center cursor-pointer bg-black bg-opacity-50  h-[300px] w-[450px] md:h-[400px] md:w-[700px]">
+                <i class="fa-solid fa-play fa-3x text-white"></i>
+            </div>            
             <div class="mt-4">
                 <h2 class="text-lg font-medium">{{ specvideo.title }}</h2>
                 <p class="text-gray-600 dark:text-gray-400">{{ specvideo.description }}</p>
@@ -262,9 +266,9 @@ Home
                 
                  <!-- Play Button Overlay -->
                     <div id="play-button" class="absolute inset-0 flex items-center justify-center cursor-pointer bg-black bg-opacity-50">
-                   <i class="fa-solid fa-play fa-3x text-white"></i>
+                        <i class="fa-solid fa-play fa-3x text-white"></i>
+                    </div>
                </div>
-            </div>
                 <div class="text-right lg:order-1">
                     <h2 class="text-2xl md:text-3xl xl:text-4xl text-gray-600 dark:text-gray-300 font-black mb-5 flex items-center justify-center md:justify-end md:ml-[115px]">
                         <i class="fa-solid fa-guitar ml-4 text-cyan-600"></i>
@@ -361,6 +365,18 @@ Home
     document.getElementById('play-button').addEventListener('click', function() {
         var video = document.getElementById('video-player');
         var playButton = document.getElementById('play-button');
+        
+        if (video.paused) {
+            video.play();
+            playButton.style.display = 'none'; // Hide the play button when video starts
+        }
+    });
+</script>
+
+<script>
+    document.getElementById('play-button2').addEventListener('click', function() {
+        var video = document.getElementById('video-player2');
+        var playButton = document.getElementById('play-button2');
         
         if (video.paused) {
             video.play();
