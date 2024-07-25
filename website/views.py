@@ -1,10 +1,12 @@
+from email.policy import default
 from django.shortcuts import render
 from courses.models import Course
 from .forms import SubscribeForm
+from decouple import config
 import sweetify
 
 def indexview(request):
-    video = Course.objects.get(id=3)
+    video = Course.objects.get(id=config('VID_ID',default=3))
     context = {"specvideo":video}
     return render(request,'website/index.html',context)
 
