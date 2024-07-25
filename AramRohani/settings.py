@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+from email.policy import default
 from pathlib import Path
 from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -192,7 +193,7 @@ INTERNAL_IPS = [
 
 
 # Path to NPM package manager 
-NPM_BIN_PATH = config('NPM_BIN_PATH')
+NPM_BIN_PATH = config('NPM_BIN_PATH',default='/home/disappeared/.nvm/versions/node/v20.15.0/bin/npm')
 # register the tailwind app name
 TAILWIND_APP_NAME = 'theme'
 
