@@ -192,7 +192,7 @@ INTERNAL_IPS = [
 
 
 # Path to NPM package manager 
-NPM_BIN_PATH = "/home/disappeared/.nvm/versions/node/v20.15.0/bin/npm"
+NPM_BIN_PATH = config('NPM_BIN_PATH')
 # register the tailwind app name
 TAILWIND_APP_NAME = 'theme'
 
