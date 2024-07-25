@@ -12,14 +12,13 @@ videos
 
 
 <div class="container mx-auto px-4">
-  <h1 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-4xl lg:text-5xl"><span
-      class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Aram Rohani</span> All videos.
+  <h1 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-4xl lg:text-5xl">
+    <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-emerald-600">Aram Rohani</span> All Videos
   </h1>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-10">
     {% for video in object_list %}
     <div class="flex flex-col mb-6">
-      <video class="flex h-[300px] w-[450px] md:h-[400px] md:w-[500px] shadow-lg rounded-md md:rounded-md border-2
-     border-gray-300 dark:border-slate-500 transform transition-transform duration-300 hover:scale-105" controls>
+      <video class="flex h-[300px] w-[450px] md:h-[400px] md:w-[500px] shadow-lg rounded-md border-2 border-gray-300 dark:border-slate-500 transform transition-transform duration-300 hover:scale-105" controls>
         <source src="/media/{{ video.video }}" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -28,29 +27,20 @@ videos
         <p class="text-gray-600 dark:text-gray-400">{{ video.description }}</p>
         <div class="flex items-center mt-2 text-sm text-gray-500 dark:text-gray-300">
           <span class="mr-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block" viewBox="0 0 20 20"
-              fill="currentColor">
-              <path fill-rule="evenodd"
-                d="M2 3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3zm2 2v12h12V5H4z"
-                clip-rule="evenodd" />
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M2 3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3zm2 2v12h12V5H4z" clip-rule="evenodd" />
             </svg>
             {{ video.views }} views
           </span>
           <span class="mr-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block" viewBox="0 0 20 20"
-              fill="currentColor">
-              <path fill-rule="evenodd"
-                d="M2 3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3zm2 2v12h12V5H4z"
-                clip-rule="evenodd" />
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M2 3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3zm2 2v12h12V5H4z" clip-rule="evenodd" />
             </svg>
             {{ video.published_date|naturaltime }}
           </span>
           <span class="mr-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block" viewBox="0 0 20 20"
-              fill="currentColor">
-              <path fill-rule="evenodd"
-                d="M2 3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3zm2 2v12h12V5H4z"
-                clip-rule="evenodd" />
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M2 3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3zm2 2v12h12V5H4z" clip-rule="evenodd" />
             </svg>
             Tags: <b>{{ video.tag }}</b>
           </span>
@@ -59,40 +49,40 @@ videos
     </div>
     {% endfor %}
 
-    <!-- pagination section -->
+    <!-- Pagination Section -->
     {% if is_paginated %}
-    <div class="flex pl-5 mb-7 md:mb-7">
-        <ul class="inline-flex items-center -space-x-px">
-
+    <div class="flex justify-center mt-8 mb-7">
+        <ul class="inline-flex items-center space-x-1">
             {% if page_obj.has_previous %}
-                <li>
-                    <a {% if page_obj.has_previous %}href="?page={{ page_obj.previous_page_number }}"{% else %} href="" {% endif %} class="block px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-200 hover:text-gray-700 dark:bg-gray-600 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-500 dark:hover:text-white">                    
-                        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                    </a>
-                </li>
+            <li>
+                <a href="?page={{ page_obj.previous_page_number }}" class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-200 dark:bg-gray-600 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-500 dark:hover:text-white">
+                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+            </li>
             {% endif %}
-
 
             {% for i in page_obj.paginator.page_range %}
                 {% if page_obj.number == i %}
-                    <li><a class="px-3 py-2 leading-tight text-gray-500 dark:text-white bg-amber-400 dark:bg-rose-600 border border-gray-300 hover:bg-white hover:text-gray-700 dark:border-gray-700 dark:hover:bg-gray-500 dark:hover:text-white" href="?page={{ i }}">{{ i }}</a></li>
+                <li><a class="px-3 py-2 leading-tight text-gray-500 bg-amber-400 border border-gray-300 hover:bg-white hover:text-gray-700 dark:bg-rose-600 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-500 dark:hover:text-white" href="?page={{ i }}">{{ i }}</a></li>
                 {% else %}
-                    <li><a class="px-3 py-2 leading-tight text-gray-500 bg-amber-200 border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-rose-800 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-500 dark:hover:text-white" href="?page={{ i }}">{{ i }}</a></li>
+                <li><a class="px-3 py-2 leading-tight text-gray-500 bg-amber-200 border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-rose-800 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-500 dark:hover:text-white" href="?page={{ i }}">{{ i }}</a></li>
                 {% endif %}
             {% endfor %}
 
-
             {% if page_obj.has_next %}
-                <li>
-                    <a {% if page_obj.has_next %}href="?page={{ page_obj.next_page_number }}"{% else %} href="" {% endif %} class="block px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-200 hover:text-gray-700 dark:bg-gray-600 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-500 dark:hover:text-white">                    
-                        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-                    </a>
-                </li>
+            <li>
+                <a href="?page={{ page_obj.next_page_number }}" class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-200 dark:bg-gray-600 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-500 dark:hover:text-white">
+                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+            </li>
             {% endif %}
         </ul>
     </div>
-    {% endif %} 
-    
+    {% endif %}
   </div>
 </div>
 {% endblock content %}
@@ -110,78 +100,69 @@ videos
 
 {% block footer %}
     <!-- footer -->
-    <footer class="bg-zinc-200 dark:bg-neutral-800">
-        <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-            <div class="md:flex md:justify-between">
-                <div class="mb-6 md:mb-0">
-                    <a href="{% url 'website:home' %}" class="flex items-center">
-                        <img src="{% static 'images/aram.jpg' %}" class="h-8 me-3 rounded-full" alt="AramRohani Logo" />
-                        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Aram
-                            Rohani</span>
-                    </a>
-                    <!-- Subscribe form -->
-                    <form class="mt-4 flex flex-col sm:flex-row" action="{% url 'website:subscribe' %}" method="post">
-                        {% csrf_token %}
-                        <i
-                            class="fa-solid fa-envelope fa-2x pr-3 text-gray-600 hover:text-orange-600 hidden md:inline md:mt-1 md:mr-2"></i>
-                        <input
-                            class="p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-slate-900" name="email"
-                            type="email" placeholder="Enter your email" required>
-                        <button
-                            class="mt-2 sm:mt-0 sm:ml-2 p-2 rounded-md bg-blue-500 text-white hover:bg-blue-700" type="submit">Subscribe</button>
-                    </form>
-                </div>
-                <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-
-                    <div>
-                        <h2 class="mb-6 text-sm md:text-md font-semibold text-gray-900 uppercase dark:text-white">Section</h2>
-                        <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                            <li class="mb-4">
-                                <a href="{% url 'courses:videos' %}" class="hover:underline ">Videos</a>
-                            </li>
-                            <li>
-                                <a href="{% url 'accounts:login' %}" class="hover:underline">Login</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h2 class="mb-6 text-sm md:text-md font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
-                        <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                            <li class="mb-4">
-                                <a href="#" class="hover:underline">Privacy Policy</a>
-                            </li>
-                            <li>
-                                <a href="#" class="hover:underline">Terms &amp; Conditions</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+<footer class="bg-zinc-200 dark:bg-neutral-800">
+    <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+        <div class="md:flex md:justify-between">
+            <!-- Logo and Subscribe Form -->
+            <div class="mb-6 md:mb-0">
+                <a href="{% url 'website:home' %}" class="flex items-center">
+                    <img src="{% static 'images/aram.jpg' %}" class="h-8 me-3 rounded-full" alt="Aram Rohani Logo" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Aram Rohani</span>
+                </a>
+                <!-- Subscribe form -->
+                <form class="mt-4 flex flex-col sm:flex-row" action="{% url 'website:subscribe' %}" method="post">
+                    {% csrf_token %}
+                    <i class="fa-solid fa-envelope fa-2x pr-3 text-gray-600 hover:text-orange-600 hidden md:inline md:mt-1 md:mr-2"></i>
+                    <input class="p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-slate-900" name="email" type="email" placeholder="Enter your email" required>
+                    <button class="mt-2 sm:mt-0 sm:ml-2 p-2 rounded-md bg-blue-500 text-white hover:bg-blue-700" type="submit">Subscribe</button>
+                </form>
             </div>
-            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-            <div class="sm:flex sm:items-center sm:justify-between">
-                <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a
-                        href="{% url 'website:home' %}" class="hover:underline font-bold">Aram Rohani</a>. All Rights
-                    Reserved.</span>
-                <div class="flex mt-4 sm:justify-center sm:mt-0">
-                    <span class="text-gray-500 dark:text-gray-400 ms-5 md:mr-7 md:text-md font-bold pr-4 ml-1">وبسایت رسمی ارام روحانی</span>
 
-                    <a href="https://www.instagram.com/aram_rohani/"
-                        class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                        <i class="fab fa-instagram w-4 h-4"></i>
-                        <span class="sr-only">Instagram page</span>
-                    </a>
-                    <a href="https://wa.me/989128231807"
-                        class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
-                        <i class="fab fa-whatsapp w-4 h-4"></i>
-                        <span class="sr-only">WhatsApp contact</span>
-                    </a>
-                    <a href="mailto:aramrohani@yahoo.com"
-                        class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
-                        <i class="fas fa-envelope w-4 h-4"></i>
-                        <span class="sr-only">Email</span>
-                    </a>
+            <!-- Footer Links -->
+            <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                <div>
+                    <h2 class="mb-6 text-sm md:text-md font-semibold text-gray-900 uppercase dark:text-white">Section</h2>
+                    <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                        <li class="mb-4">
+                            <a href="{% url 'courses:videos' %}" class="hover:underline">Videos</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'accounts:login' %}" class="hover:underline">Login</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="mb-6 text-sm md:text-md font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
+                    <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </footer>
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="{% url 'website:home' %}" class="hover:underline font-bold">Aram Rohani</a>. All Rights Reserved.</span>
+            <div class="flex mt-4 sm:mt-0 sm:justify-center">
+                <span class="text-gray-500 dark:text-gray-400 ms-5 md:mr-7 md:text-md font-bold pr-4 ml-1">وبسایت رسمی ارام روحانی</span>
+                <a href="https://www.instagram.com/aram_rohani/" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                    <i class="fab fa-instagram w-4 h-4"></i>
+                    <span class="sr-only">Instagram page</span>
+                </a>
+                <a href="https://wa.me/989128231807" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                    <i class="fab fa-whatsapp w-4 h-4"></i>
+                    <span class="sr-only">WhatsApp contact</span>
+                </a>
+                <a href="mailto:aramrohani@yahoo.com" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                    <i class="fas fa-envelope w-4 h-4"></i>
+                    <span class="sr-only">Email</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
 {% endblock footer %}
