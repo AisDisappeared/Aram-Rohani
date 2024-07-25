@@ -18,6 +18,7 @@ class Course(models.Model):
     views = models.BigIntegerField(default=0)
     video = models.FileField(upload_to='videos/')
     published_date = models.DateTimeField(auto_now_add=True)
+    poster = models.ImageField(blank=True)
 
     class Meta:
         ordering = ['-published_date']
