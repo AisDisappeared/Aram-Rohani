@@ -7,6 +7,8 @@ import sweetify
 
 def indexview(request):
     video = Course.objects.get(id=config('VID_ID',default=3))
+    video.views += 1 
+    video.save()
     context = {"specvideo":video}
     return render(request,'website/index.html',context)
 
