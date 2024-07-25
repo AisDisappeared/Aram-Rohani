@@ -55,7 +55,7 @@ INSTALLED_APPS = [
     # 3rd party apps 
     'tailwind',
     'theme',
-    'django_browser_reload',
+    # 'django_browser_reload',
     'sweetify',
     'widget_tweaks',
     'robots',
@@ -71,7 +71,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "django_browser_reload.middleware.BrowserReloadMiddleware",
+    # "django_browser_reload.middleware.BrowserReloadMiddleware",
 
 ]
 
