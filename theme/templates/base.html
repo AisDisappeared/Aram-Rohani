@@ -29,9 +29,8 @@
         <div class="col-span-11 md:col-span-10">
             <div class="pt-20 px-6">
                 <a href="{% url 'change' %}"
-                    class="fixed top-[115px] right-4 p-3 rounded-lg bg-slate-200 hover:bg-slate-300 dark:bg-yellow-300 dark:hover:bg-yellow-400 text-slate-900 dark:text-gray-900 transition">
-                    <i
-                        class="fa-solid {% if request.session.is_dark_mode %}fa-sun{% else %}fa-moon{% endif %} fa-xl"></i>
+                class="fixed top-[115px] right-4 p-3 rounded-lg bg-slate-200 hover:bg-slate-300 dark:bg-yellow-300 dark:hover:bg-yellow-400 text-slate-900 dark:text-gray-900 transition">
+                    <i class="fa-solid {% if request.session.is_dark_mode %}fa-sun{% else %}fa-moon{% endif %} fa-xl"></i>
                 </a>
                 <div class="grid grid-cols-1 md:grid-cols-1 gap-6">
                     {% block content %}
@@ -50,8 +49,26 @@
     <!-- jdenticon -->
     <script src="https://cdn.jsdelivr.net/npm/jdenticon@3.3.0/dist/jdenticon.min.js" async
         integrity="sha384-LfouGM03m83ArVtne1JPk926e3SGD0Tz8XHtW2OKGsgeBU/UfR0Fa8eX+UlwSSAZ" crossorigin="anonymous">
-        </script>
+    </script>
 
+
+        
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the dark mode status from a hidden JSON script tag
+            const isDarkMode = JSON.parse(document.getElementById('is-dark-mode').textContent);
+            if (isDarkMode) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+
+    <!-- Include a hidden script tag to pass the session variable -->
+    <script type="application/json" id="is-dark-mode">
+        {{ request.session.is_dark_mode|json_script:"is-dark-mode" }}
+    </script>
     {% block scripts %}
     <!-- javascripts here -->
     {% endblock scripts %}
@@ -61,7 +78,6 @@
 {% block footer %}
   
 {% endblock footer %}
-
 
 
 
