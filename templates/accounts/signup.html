@@ -22,9 +22,17 @@ Register
         <form method="POST" action="{% url 'accounts:register' %}" autocomplete="off">
             {% csrf_token %}
             {% for field in form %}
-            <div class="mb-4">
+            <div class="mb-4 relative">
                 <label class="block text-gray-700 dark:text-purple-500 text-sm font-bold mb-2" for="{{ field.id_for_label }}">{{ field.label }}</label>
-                {% render_field field class="bg-slate-100 dark:bg-slate-600 text-slate-800 dark:text-slate-200 rounded-lg p-3 w-full" %}
+                {% render_field field class="bg-slate-100 dark:bg-slate-600 text-slate-800 dark:text-slate-200 rounded-lg p-3 w-full pr-10" %}
+                {% if field.field.widget.input_type == 'password' %}
+                <div class="absolute top-[40px] right-0 flex items-center pr-3">
+                    <svg id="togglePassword{{ forloop.counter }}" class="h-6 text-gray-600 cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        <path d="M2.458 12C3.732 7.943 7.612 5 12 5c4.388 0 8.268 2.943 9.542 7-1.274 4.057-5.154 7-9.542 7-4.388 0-8.268-2.943-9.542-7z"/>
+                    </svg>
+                </div>
+                {% endif %}
             </div>
             {% endfor %}
             <button type="submit" class="bg-cyan-500 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded w-full">Sign up</button>
@@ -39,5 +47,27 @@ Register
 
 
 {% block scripts %}
+<!-- flowbite -->
 <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script> 
+
+
+<!-- password eye icon -->
+ <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const togglePasswordElements = document.querySelectorAll('[id^="togglePassword"]');
+
+        togglePasswordElements.forEach(togglePassword => {
+            const passwordField = togglePassword.closest('.relative').querySelector('input[type="password"]');
+
+            togglePassword.addEventListener('click', function () {
+                const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordField.setAttribute('type', type);
+
+                // Toggle the eye icon
+                this.classList.toggle('text-gray-600');
+                this.classList.toggle('text-gray-800');
+            });
+        });
+    });
+</script>
 {% endblock scripts %}
