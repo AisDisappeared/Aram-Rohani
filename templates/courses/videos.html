@@ -21,8 +21,7 @@ videos
       <video poster="{% if video.title == 'Austrias canada 2004' %}{% static 'images/asturias.png' %}{% elif video.title == 'Khonyagar Flamenco Guitar Course' %}
       https://storage.khonyagar.com/landings/guitar-flamenco/teacher/aram-rohani.jpg {% elif video.title == 'Niavaran concert 2018'%}
       {%static 'images/maestro.jpg' %}{% elif video.title == 'Bulerias' %}{% static 'images/hatra.png' %}{% elif video.title == 'Canada Workshop' %}{% static 'images/canada.png' %}
-      {% elif video.title == 'Niavaran Concert - 2018' %}{% static 'images/concert-niavaran.jpg' %}
-      {% elif video.title == 'Khonyagar Flamenco Course' %}{% static 'images/comprehensionFlamencoCourse.png' %}{% endif %}" class="flex h-[300px] w-[450px] md:h-[400px] md:w-[500px] shadow-lg rounded-md border-2 border-gray-300 dark:border-slate-500 transform transition-transform duration-300 hover:scale-105" controls>
+      {% elif video.title == 'Niavaran Concert - 2018' %}{% static 'images/concert-niavaran.jpg' %}{% endif %}" class="flex h-[300px] w-[450px] md:h-[400px] md:w-[500px] shadow-lg rounded-md border-2 border-gray-300 dark:border-slate-500 transform transition-transform duration-300 hover:scale-105" controls>
         <source src="/media/{{ video.video }}" type="video/mp4">
         Your browser does not support the video tag.
       </video>
