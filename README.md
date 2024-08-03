@@ -23,7 +23,7 @@ This is the personal website for Aram Rohani, an Iranian guitarist and artist. T
      ~~~
 
 3. Create and activate a virtual environment:
-git clone <https://github.com/AisDisappeared/BOOKRENT.git>
+
    ~~~bash
    python -m venv venv
    ~~~
