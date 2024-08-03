@@ -11,29 +11,47 @@ This is the personal website for Aram Rohani, an Iranian guitarist and artist. T
 ## Installation
 
 1. Clone the repository:
+
+     ~~~bash
      git clone https://github.com/AisDisappeared/Aram-Rohani.git
-     
-   
+     ~~~
+
 2. Navigate to the project directory:
-     cd aram-rohani-website
-   
+
+     ~~~bash
+     cd Aram-Rohani
+     ~~~
+
 3. Create and activate a virtual environment:
-     python -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-   
+git clone <https://github.com/AisDisappeared/BOOKRENT.git>
+   ~~~bash
+   python -m venv venv
+   ~~~
+
+   source venv/bin/activate  //  # On Windows use `venv\Scripts\activate`
+
 4. Install the required dependencies:
+
+     ~~~bash
      pip install -r requirements.txt
-   
+     ~~~
+
 5. Install Tailwind CSS:
    Follow the instructions in the [django-tailwind documentation](https://django-tailwind.readthedocs.io/en/latest/installation.html) to set up Tailwind CSS for your Django project.
 
 6. Apply migrations:
+
+     ~~~bash
      python manage.py migrate
-   
+     ~~~
+
 7. Run the development server:
+
+     ~~~bash
      python manage.py runserver
-   
-8. Visit http://127.0.0.1:8000/ in your browser.
+     ~~~
+
+8. Visit <http://127.0.0.1:8000/> in your browser.
 
 ## Usage
 
@@ -51,4 +69,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Contact
 
 For any questions or feedback, please contact [Aliseyfi0841@gmail.com](mailto:Aliseyfi0841@gmail.com).
-
